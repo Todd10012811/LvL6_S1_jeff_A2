@@ -1,7 +1,14 @@
 <?php
 class _content{
+    private $db;
+
+    public function __construct() {
+        $this->db = new Database;
+    }
+
     public function title() {
-        return "Home Page";
+        $this->db->query('SELECT * FROM AppointmentRequest where IDN = 45');
+        return $this->db->resultSet();
     }
 
     public function paragraph() {
